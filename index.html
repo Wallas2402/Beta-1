@@ -5,37 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عرض صيف 2025</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: white;
       font-family: 'Arial', sans-serif;
-      text-align: center;
-      direction: rtl;
       margin: 0;
       padding: 0;
+      direction: rtl;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
     }
+
     .logo {
-      height: 100px; /* doubled */
+      height: 100px;
     }
+
     .promo {
       color: red;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
     }
+
     .main-logo {
       opacity: 0.03;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      max-width: 90vw;
+      width: 90%;
       z-index: 0;
     }
+
     .carousel-container {
       overflow-x: auto;
       display: flex;
@@ -43,35 +51,49 @@
       gap: 10px;
       padding: 20px;
     }
+
     .carousel-container img {
       height: 200px;
       width: 30%;
       object-fit: cover;
       flex-shrink: 0;
     }
+
+    @media (max-width: 768px) {
+      .carousel-container img {
+        width: 70%;
+        height: 150px;
+      }
+    }
+
     .price {
       text-align: right;
       font-size: 20px;
       margin: 10px 20px;
     }
+
     .price span {
       text-decoration: line-through;
       color: red;
     }
+
     form {
       max-width: 600px;
       margin: 20px auto;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      text-align: right;
-      z-index: 1;
+      padding: 10px;
       position: relative;
+      z-index: 1;
     }
+
     input, select, textarea {
       padding: 10px;
       font-size: 16px;
+      width: 100%;
     }
+
     button {
       background-color: red;
       color: white;
@@ -117,7 +139,7 @@
     </label>
     <label>الولاية:
       <select name="wilaya" required>
-        <option value=\"\">اختر الولاية</option>
+        <option value="">اختر الولاية</option>
         <option>الجزائر</option>
         <option>أدرار</option>
         <option>الشلف</option>
@@ -134,7 +156,7 @@
         <option>تلمسان</option>
         <option>تيارت</option>
         <option>تيزي وزو</option>
-        <!-- Continue with the rest up to 58 wilayas -->
+        <!-- Continue to full 58 wilayas if needed -->
       </select>
     </label>
     <label>عدد القطع المطلوبة:
