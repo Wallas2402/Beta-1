@@ -20,7 +20,7 @@
       padding: 10px 20px;
     }
     .logo {
-      height: 50px;
+      height: 100px; /* doubled */
     }
     .promo {
       color: red;
@@ -28,22 +28,26 @@
       font-weight: bold;
     }
     .main-logo {
-      opacity: 0.05;
+      opacity: 0.03;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      max-width: 300px;
+      max-width: 90vw;
+      z-index: 0;
     }
-    .carousel {
-      display: flex;
+    .carousel-container {
       overflow-x: auto;
+      display: flex;
+      scroll-behavior: smooth;
       gap: 10px;
       padding: 20px;
-      justify-content: center;
     }
-    .carousel img {
+    .carousel-container img {
       height: 200px;
+      width: 30%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
     .price {
       text-align: right;
@@ -61,6 +65,8 @@
       flex-direction: column;
       gap: 10px;
       text-align: right;
+      z-index: 1;
+      position: relative;
     }
     input, select, textarea {
       padding: 10px;
@@ -84,7 +90,7 @@
 
   <img src="logo.png" alt="الشعار الكبير" class="main-logo">
 
-  <div class="carousel">
+  <div class="carousel-container">
     <img src="pic1.jpg" alt="صورة 1">
     <img src="pic2.jpg" alt="صورة 2">
     <img src="pic3.jpg" alt="صورة 3">
@@ -97,32 +103,42 @@
   </div>
 
   <form action="https://formspree.io/f/mpwdkapw" method="POST">
-    <label>الكمية المطلوبة:
-      <input type="number" name="quantity" required>
-    </label>
     <label>الاسم:
       <input type="text" name="first_name" required>
     </label>
     <label>اللقب:
       <input type="text" name="last_name" required>
     </label>
+    <label>رقم الهاتف:
+      <input type="tel" name="phone" required>
+    </label>
     <label>العنوان:
       <textarea name="address" required></textarea>
     </label>
     <label>الولاية:
       <select name="wilaya" required>
-        <option value="">اختر الولاية</option>
+        <option value=\"\">اختر الولاية</option>
+        <option>الجزائر</option>
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <!-- Add the remaining 55 wilayas here -->
+        <option>أم البواقي</option>
+        <option>باتنة</option>
+        <option>بجاية</option>
+        <option>بسكرة</option>
+        <option>بشار</option>
+        <option>البليدة</option>
+        <option>البويرة</option>
+        <option>تمنراست</option>
+        <option>تبسة</option>
+        <option>تلمسان</option>
+        <option>تيارت</option>
+        <option>تيزي وزو</option>
+        <!-- Continue with the rest up to 58 wilayas -->
       </select>
     </label>
-    <label>البلدية:
-      <input type="text" name="commune" required>
-    </label>
-    <label>رقم الهاتف:
-      <input type="tel" name="phone" required>
+    <label>عدد القطع المطلوبة:
+      <input type="number" name="quantity" required>
     </label>
     <button type="submit">أرسل الطلب</button>
   </form>
