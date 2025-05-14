@@ -5,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>رحلة إلى حمام السخنة</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #8e2de2, #ffffff);
       direction: rtl;
     }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -24,17 +20,14 @@
       position: relative;
       z-index: 1;
     }
-
     .logo {
       height: 90px;
     }
-
     .title {
       color: red;
       font-size: 24px;
       font-weight: bold;
     }
-
     .main-logo {
       opacity: 0.04;
       position: absolute;
@@ -44,20 +37,17 @@
       max-width: 90%;
       z-index: 0;
     }
-
     .carousel {
       overflow: hidden;
       width: 100%;
       position: relative;
       margin-top: 10px;
     }
-
     .carousel-track {
       display: flex;
       width: fit-content;
-      animation: scroll 10s linear infinite;
+      animation: scroll 5s linear infinite;
     }
-
     .carousel-track img {
       height: 200px;
       width: auto;
@@ -65,12 +55,10 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
     @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-
     @media (max-width: 768px) {
       .carousel-track img {
         height: 140px;
@@ -80,7 +68,6 @@
         height: 70px;
       }
     }
-
     form {
       max-width: 600px;
       margin: 30px auto;
@@ -93,12 +80,10 @@
       position: relative;
       z-index: 1;
     }
-
     label {
       text-align: right;
       font-weight: bold;
     }
-
     input, select {
       padding: 10px;
       font-size: 16px;
@@ -106,7 +91,6 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-
     button {
       background-color: purple;
       color: white;
@@ -120,24 +104,21 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="الشعار" class="logo" />
+    <img src="logo.png" alt="الشعار" class="logo" />
     <div class="title">رحلة إلى حمام السخنة</div>
   </header>
-
-  <img src="images/logo.png" alt="شعار في الخلفية" class="main-logo" />
-
+  <img src="logo.png" alt="شعار في الخلفية" class="main-logo" />
   <div class="carousel">
     <div class="carousel-track">
-      <img src="images/pic1.jpg" alt="صورة 1" />
-      <img src="images/pic2.jpg" alt="صورة 2" />
-      <img src="images/pic3.jpg" alt="صورة 3" />
-      <img src="images/pic4.jpg" alt="صورة 4" />
-      <img src="images/pic5.jpg" alt="صورة 5" />
-      <img src="images/pic1.jpg" alt="صورة 1 مكررة" />
-      <img src="images/pic2.jpg" alt="صورة 2 مكررة" />
+      <img src="pic1.jpg" alt="صورة 1" />
+      <img src="pic2.jpg" alt="صورة 2" />
+      <img src="pic3.jpg" alt="صورة 3" />
+      <img src="pic4.jpg" alt="صورة 4" />
+      <img src="pic5.jpg" alt="صورة 5" />
+      <img src="pic1.jpg" alt="صورة 1 مكررة" />
+      <img src="pic2.jpg" alt="صورة 2 مكررة" />
     </div>
   </div>
-
   <form action="https://formspree.io/f/mpwdkapw" method="POST">
     <label>الاسم:
       <input type="text" name="first_name" required />
