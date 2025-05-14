@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عرض صيف 2025</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .logo {
+      height: 50px;
+    }
+    .promo {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .main-logo {
+      opacity: 0.05;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 300px;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 20px;
+      justify-content: center;
+    }
+    .carousel img {
+      height: 200px;
+    }
+    .price {
+      text-align: right;
+      font-size: 20px;
+      margin: 10px 20px;
+    }
+    .price span {
+      text-decoration: line-through;
+      color: red;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: right;
+    }
+    input, select, textarea {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="الشعار" class="logo">
+    <div class="promo">عرض صيف 2025</div>
+  </header>
+
+  <img src="logo.png" alt="الشعار الكبير" class="main-logo">
+
+  <div class="carousel">
+    <img src="pic1.jpg" alt="صورة 1">
+    <img src="pic2.jpg" alt="صورة 2">
+    <img src="pic3.jpg" alt="صورة 3">
+    <img src="pic4.jpg" alt="صورة 4">
+    <img src="pic5.jpg" alt="صورة 5">
+  </div>
+
+  <div class="price">
+    <strong>2600 دج</strong> <span>3900 دج</span>
+  </div>
+
+  <form action="https://formspree.io/f/mpwdkapw" method="POST">
+    <label>الكمية المطلوبة:
+      <input type="number" name="quantity" required>
+    </label>
+    <label>الاسم:
+      <input type="text" name="first_name" required>
+    </label>
+    <label>اللقب:
+      <input type="text" name="last_name" required>
+    </label>
+    <label>العنوان:
+      <textarea name="address" required></textarea>
+    </label>
+    <label>الولاية:
+      <select name="wilaya" required>
+        <option value="">اختر الولاية</option>
+        <option>أدرار</option>
+        <option>الشلف</option>
+        <option>الأغواط</option>
+        <!-- Add the remaining 55 wilayas here -->
+      </select>
+    </label>
+    <label>البلدية:
+      <input type="text" name="commune" required>
+    </label>
+    <label>رقم الهاتف:
+      <input type="tel" name="phone" required>
+    </label>
+    <button type="submit">أرسل الطلب</button>
+  </form>
+</body>
+</html>
