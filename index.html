@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عرض صيف 2025</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>رحلة إلى حمام السخنة</title>
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
-      background-color: white;
-      font-family: 'Arial', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #8e2de2, #ffffff);
       direction: rtl;
     }
 
@@ -22,120 +21,135 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-    }
-
-    .logo {
-      height: 100px;
-    }
-
-    .promo {
-      color: red;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .main-logo {
-      opacity: 0.03;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      z-index: 0;
-    }
-
-    .carousel-container {
-      overflow-x: auto;
-      display: flex;
-      scroll-behavior: smooth;
-      gap: 10px;
-      padding: 20px;
-    }
-
-    .carousel-container img {
-      height: 200px;
-      width: 30%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 768px) {
-      .carousel-container img {
-        width: 70%;
-        height: 150px;
-      }
-    }
-
-    .price {
-      text-align: right;
-      font-size: 20px;
-      margin: 10px 20px;
-    }
-
-    .price span {
-      text-decoration: line-through;
-      color: red;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 20px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
       position: relative;
       z-index: 1;
     }
 
-    input, select, textarea {
+    .logo {
+      height: 90px;
+    }
+
+    .title {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .main-logo {
+      opacity: 0.04;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      z-index: 0;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+
+    .carousel-track img {
+      height: 200px;
+      width: auto;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-track img {
+        height: 150px;
+      }
+      .logo {
+        height: 60px;
+      }
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    label {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    input, select {
       padding: 10px;
       font-size: 16px;
       width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     button {
-      background-color: red;
+      background-color: purple;
       color: white;
       padding: 10px;
       font-size: 18px;
       border: none;
       cursor: pointer;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="الشعار" class="logo">
-    <div class="promo">عرض صيف 2025</div>
+    <img src="logo.png" alt="الشعار" class="logo" />
+    <div class="title">رحلة إلى حمام السخنة</div>
   </header>
 
-  <img src="logo.png" alt="الشعار الكبير" class="main-logo">
+  <img src="logo.png" alt="شعار في الخلفية" class="main-logo" />
 
-  <div class="carousel-container">
-    <img src="pic1.jpg" alt="صورة 1">
-    <img src="pic2.jpg" alt="صورة 2">
-    <img src="pic3.jpg" alt="صورة 3">
-    <img src="pic4.jpg" alt="صورة 4">
-    <img src="pic5.jpg" alt="صورة 5">
+  <!-- Carousel Section -->
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="pic1.jpg" alt="صورة 1" />
+      <img src="pic2.jpg" alt="صورة 2" />
+      <img src="pic3.jpg" alt="صورة 3" />
+      <img src="pic4.jpg" alt="صورة 4" />
+      <img src="pic5.jpg" alt="صورة 5" />
+      <!-- Repeating for infinite scroll effect -->
+      <img src="pic1.jpg" alt="صورة 1 مكررة" />
+      <img src="pic2.jpg" alt="صورة 2 مكررة" />
+      <img src="pic3.jpg" alt="صورة 3 مكررة" />
+    </div>
   </div>
 
-  <div class="price">
-    <strong>2600 دج</strong> <span>3900 دج</span>
-  </div>
-
-  <form action="https://formspree.io/f/mpwdkapw" method="POST">
+  <!-- Form Section -->
+  <form action="https://formspree.io/f/your-form-id" method="POST">
     <label>الاسم:
-      <input type="text" name="first_name" required>
+      <input type="text" name="first_name" required />
     </label>
     <label>اللقب:
-      <input type="text" name="last_name" required>
+      <input type="text" name="last_name" required />
     </label>
     <label>رقم الهاتف:
-      <input type="tel" name="phone" required>
-    </label>
-    <label>العنوان:
-      <textarea name="address" required></textarea>
+      <input type="tel" name="phone" required />
     </label>
     <label>الولاية:
       <select name="wilaya" required>
@@ -156,13 +170,30 @@
         <option>تلمسان</option>
         <option>تيارت</option>
         <option>تيزي وزو</option>
-        <!-- Continue to full 58 wilayas if needed -->
-      </select>
-    </label>
-    <label>عدد القطع المطلوبة:
-      <input type="number" name="quantity" required>
-    </label>
-    <button type="submit">أرسل الطلب</button>
-  </form>
-</body>
-</html>
+        <option>الجلفة</option>
+        <option>جيجل</option>
+        <option>سطيف</option>
+        <option>سعيدة</option>
+        <option>سكيكدة</option>
+        <option>سيدي بلعباس</option>
+        <option>عنابة</option>
+        <option>قالمة</option>
+        <option>قسنطينة</option>
+        <option>المدية</option>
+        <option>مستغانم</option>
+        <option>المسيلة</option>
+        <option>معسكر</option>
+        <option>ورقلة</option>
+        <option>وهران</option>
+        <option>البيض</option>
+        <option>إليزي</option>
+        <option>برج بوعريريج</option>
+        <option>بومرداس</option>
+        <option>الطارف</option>
+        <option>تندوف</option>
+        <option>تيسمسيلت</option>
+        <option>الوادي</option>
+        <option>خنشلة</option>
+        <option>سوق أهراس</option>
+        <option>تيبازة</option>
+        <option>ميلة</opti
