@@ -46,13 +46,14 @@
       width: 100%;
       overflow: hidden;
       position: relative;
-      margin-top: 10px;
+      margin: 10px 0;
+      background: white;
     }
 
     .carousel-track {
       display: flex;
-      animation: scroll 15s linear infinite;
-      width: max-content;
+      width: fit-content;
+      animation: scroll 12s linear infinite;
     }
 
     .carousel-track img {
@@ -60,7 +61,6 @@
       margin: 0 10px;
       border-radius: 10px;
       flex-shrink: 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     @keyframes scroll {
@@ -131,11 +131,12 @@
       <img src="pic3.jpg" alt="صورة 3" />
       <img src="pic4.jpg" alt="صورة 4" />
       <img src="pic5.jpg" alt="صورة 5" />
-      <img src="pic1.jpg" alt="صورة 1 مكررة" />
-      <img src="pic2.jpg" alt="صورة 2 مكررة" />
-      <img src="pic3.jpg" alt="صورة 3 مكررة" />
-      <img src="pic4.jpg" alt="صورة 4 مكررة" />
-      <img src="pic5.jpg" alt="صورة 5 مكررة" />
+      <!-- Duplicate for loop effect -->
+      <img src="pic1.jpg" alt="صورة 1" />
+      <img src="pic2.jpg" alt="صورة 2" />
+      <img src="pic3.jpg" alt="صورة 3" />
+      <img src="pic4.jpg" alt="صورة 4" />
+      <img src="pic5.jpg" alt="صورة 5" />
     </div>
   </div>
 
@@ -225,5 +226,6 @@
 
     <button type="submit">أرسل الطلب</button>
   </form>
+
 </body>
 </html>
