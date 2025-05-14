@@ -1,4 +1,4 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -154,7 +154,59 @@ html_content = """<!DOCTYPE html>
         <option>الجزائر</option>
         <option>أدرار</option>
         <option>الشلف</option>
-        <!-- ... truncated for brevity ... -->
+        <option>الأغواط</option>
+        <option>أم البواقي</option>
+        <option>باتنة</option>
+        <option>بجاية</option>
+        <option>بسكرة</option>
+        <option>بشار</option>
+        <option>البليدة</option>
+        <option>البويرة</option>
+        <option>تمنراست</option>
+        <option>تبسة</option>
+        <option>تلمسان</option>
+        <option>تيارت</option>
+        <option>تيزي وزو</option>
+        <option>الجلفة</option>
+        <option>جيجل</option>
+        <option>سطيف</option>
+        <option>سعيدة</option>
+        <option>سكيكدة</option>
+        <option>سيدي بلعباس</option>
+        <option>عنابة</option>
+        <option>قالمة</option>
+        <option>قسنطينة</option>
+        <option>المدية</option>
+        <option>مستغانم</option>
+        <option>المسيلة</option>
+        <option>معسكر</option>
+        <option>ورقلة</option>
+        <option>وهران</option>
+        <option>البيض</option>
+        <option>إليزي</option>
+        <option>برج بوعريريج</option>
+        <option>بومرداس</option>
+        <option>الطارف</option>
+        <option>تندوف</option>
+        <option>تيسمسيلت</option>
+        <option>الوادي</option>
+        <option>خنشلة</option>
+        <option>سوق أهراس</option>
+        <option>تيبازة</option>
+        <option>ميلة</option>
+        <option>عين الدفلى</option>
+        <option>النعامة</option>
+        <option>عين تموشنت</option>
+        <option>غرداية</option>
+        <option>غليزان</option>
+        <option>تميمون</option>
+        <option>أولاد جلال</option>
+        <option>بني عباس</option>
+        <option>إن صالح</option>
+        <option>إن قزام</option>
+        <option>تقرت</option>
+        <option>جانت</option>
+        <option>المغير</option>
         <option>المنيعة</option>
       </select>
     </label>
@@ -168,20 +220,3 @@ html_content = """<!DOCTYPE html>
   </form>
 </body>
 </html>
-"""
-
-# Save HTML file
-html_path = os.path.join(base_path, "index.html")
-with open(html_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-# Create zip file
-zip_path = "/mnt/data/website_ready_mobile_carousel.zip"
-with ZipFile(zip_path, "w") as zipf:
-    for foldername, subfolders, filenames in os.walk(base_path):
-        for filename in filenames:
-            file_path = os.path.join(foldername, filename)
-            arcname = os.path.relpath(file_path, base_path)
-            zipf.write(file_path, arcname=arcname)
-
-zip_path
