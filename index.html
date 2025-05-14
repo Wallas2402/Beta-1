@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>رحلة إلى حمام السخنة</title>
+  <title>تسجيل</title>
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #8e2de2, #ffffff);
+      background: linear-gradient(135deg, #9b59b6, #ffffff);
       direction: rtl;
+      overflow-x: hidden;
     }
 
     header {
@@ -19,7 +19,7 @@
       align-items: center;
       padding: 10px 20px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .logo {
@@ -33,7 +33,7 @@
     }
 
     .main-logo {
-      opacity: 0.04;
+      opacity: 0.05;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -42,25 +42,27 @@
       z-index: 0;
     }
 
-    .carousel {
+    .carousel-container {
       width: 100%;
       overflow: hidden;
       position: relative;
-      margin: 10px 0;
+      margin: 20px 0;
       background: white;
     }
 
     .carousel-track {
       display: flex;
-      width: fit-content;
-      animation: scroll 12s linear infinite;
+      width: calc(200px * 10); /* number of images * width */
+      animation: scroll 10s linear infinite;
     }
 
     .carousel-track img {
-      height: 200px;
+      width: 200px;
+      height: 150px;
       margin: 0 10px;
       border-radius: 10px;
       flex-shrink: 0;
+      object-fit: cover;
     }
 
     @keyframes scroll {
@@ -70,7 +72,8 @@
 
     @media (max-width: 768px) {
       .carousel-track img {
-        height: 140px;
+        width: 160px;
+        height: 120px;
         margin: 0 5px;
       }
       .logo {
@@ -81,37 +84,37 @@
     form {
       max-width: 600px;
       margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 12px;
+      gap: 15px;
       position: relative;
       z-index: 1;
     }
 
     label {
-      text-align: right;
       font-weight: bold;
+      text-align: right;
     }
 
     input, select {
       padding: 10px;
       font-size: 16px;
-      width: 100%;
       border: 1px solid #ccc;
       border-radius: 5px;
+      width: 100%;
     }
 
     button {
       background-color: purple;
       color: white;
-      padding: 10px;
+      padding: 12px;
       font-size: 18px;
       border: none;
-      cursor: pointer;
       border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -122,35 +125,35 @@
     <div class="title">رحلة إلى حمام السخنة</div>
   </header>
 
-  <img src="logo.png" alt="شعار في الخلفية" class="main-logo" />
+  <img src="logo.png" alt="شعار الخلفية" class="main-logo" />
 
-  <div class="carousel">
+  <div class="carousel-container">
     <div class="carousel-track">
-      <img src="pic1.jpg" alt="صورة 1" />
-      <img src="pic2.jpg" alt="صورة 2" />
-      <img src="pic3.jpg" alt="صورة 3" />
-      <img src="pic4.jpg" alt="صورة 4" />
-      <img src="pic5.jpg" alt="صورة 5" />
-      <!-- Duplicate for loop effect -->
-      <img src="pic1.jpg" alt="صورة 1" />
-      <img src="pic2.jpg" alt="صورة 2" />
-      <img src="pic3.jpg" alt="صورة 3" />
-      <img src="pic4.jpg" alt="صورة 4" />
-      <img src="pic5.jpg" alt="صورة 5" />
+      <img src="pic1.jpg" alt="1" />
+      <img src="pic2.jpg" alt="2" />
+      <img src="pic3.jpg" alt="3" />
+      <img src="pic4.jpg" alt="4" />
+      <img src="pic5.jpg" alt="5" />
+      <!-- Repeat images for looping effect -->
+      <img src="pic1.jpg" alt="1" />
+      <img src="pic2.jpg" alt="2" />
+      <img src="pic3.jpg" alt="3" />
+      <img src="pic4.jpg" alt="4" />
+      <img src="pic5.jpg" alt="5" />
     </div>
   </div>
 
   <form action="https://formspree.io/f/mpwdkapw" method="POST">
     <label>الاسم:
-      <input type="text" name="first_name" required />
+      <input type="text" name="first_name" required>
     </label>
 
     <label>اللقب:
-      <input type="text" name="last_name" required />
+      <input type="text" name="last_name" required>
     </label>
 
     <label>رقم الهاتف:
-      <input type="tel" name="phone" required />
+      <input type="tel" name="phone" required>
     </label>
 
     <label>الولاية:
@@ -217,11 +220,11 @@
     </label>
 
     <label>عدد الأشخاص:
-      <input type="number" name="total_people" required />
+      <input type="number" name="total_people" required>
     </label>
 
     <label>عدد الأشخاص المرافقين:
-      <input type="number" name="accompanying_people" required />
+      <input type="number" name="accompanying_people" required>
     </label>
 
     <button type="submit">أرسل الطلب</button>
