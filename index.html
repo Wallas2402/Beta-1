@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>تسجيل</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +33,7 @@
     }
 
     .main-logo {
-      opacity: 0.05;
+      opacity: 0.04;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -44,15 +44,15 @@
 
     .carousel-container {
       overflow: hidden;
-      position: relative;
       width: 100%;
       height: 200px;
       margin: 30px 0;
+      position: relative;
     }
 
     .carousel-track {
       display: flex;
-      width: fit-content;
+      width: max-content;
       animation: scroll 10s linear infinite;
     }
 
@@ -153,12 +153,12 @@
   <!-- Carousel infini -->
   <div class="carousel-container">
     <div class="carousel-track" id="carousel-track">
+      <!-- Images duplicées pour boucle infinie sans coupure -->
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
       <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
       <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
       <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
-      <!-- Duplication pour effet continu sans coupure -->
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
       <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
@@ -193,7 +193,6 @@
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <option>أم البواقي</option>
         <!-- Ajoute les 58 wilayas ici -->
       </select>
     </label>
