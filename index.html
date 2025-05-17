@@ -45,19 +45,19 @@
     .carousel-wrapper {
       overflow: hidden;
       position: relative;
-      height: 170px;
+      height: 180px;
       margin: 30px 0;
     }
 
     .carousel-track {
       display: flex;
-      animation: scroll 20s linear infinite;
       gap: 10px;
+      animation: scroll 10s linear infinite;
     }
 
     .carousel-track img {
-      width: 200px;
-      height: 150px;
+      width: 220px;
+      height: 160px;
       border-radius: 10px;
       object-fit: cover;
       cursor: pointer;
@@ -66,7 +66,7 @@
 
     @keyframes scroll {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      100% { transform: translateX(-110%); }
     }
 
     @media (max-width: 768px) {
@@ -155,7 +155,7 @@
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
       <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
       <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
-      <!-- Clone pour boucle infinie -->
+      <!-- clones pour boucle infinie -->
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
       <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
@@ -190,12 +190,16 @@
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <!-- Ajoute le reste si besoin -->
+        <!-- ajouter les autres wilayas ici -->
       </select>
     </label>
 
     <label>عدد الأشخاص:
       <input type="number" name="total_people" required>
+    </label>
+
+    <label>عدد الأشخاص المرافقين:
+      <input type="number" name="accompanying_people" required>
     </label>
 
     <button type="submit">أرسل الطلب</button>
@@ -211,5 +215,6 @@
       document.getElementById("lightbox").classList.remove("active");
     }
   </script>
+
 </body>
 </html>
