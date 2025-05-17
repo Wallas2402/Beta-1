@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>تسجيل</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Arial', sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #9b59b6, #ffffff);
       overflow-x: hidden;
-      direction: rtl;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 15px 20px;
       position: relative;
       z-index: 2;
     }
@@ -28,148 +27,144 @@
 
     .title {
       color: red;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: bold;
     }
 
     .main-logo {
-      opacity: 0.04;
       position: absolute;
       top: 50%;
       left: 50%;
+      opacity: 0.03;
       transform: translate(-50%, -50%);
       max-width: 90%;
       z-index: 0;
     }
 
-    /* Carousel wrapper */
     .carousel-container {
-      width: 100%;
-      overflow: hidden;
       position: relative;
-      margin: 30px 0;
+      overflow: hidden;
+      width: 100%;
+      height: 220px;
+      margin-top: 30px;
     }
 
-    /* Track with animation */
     .carousel-track {
       display: flex;
-      width: max-content;
+      width: calc(200px * 10);
       animation: scroll 10s linear infinite;
     }
 
     .carousel-track img {
-      width: 100vw;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    /* Infinite scroll keyframes */
     @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     @media (max-width: 768px) {
       .carousel-track img {
-        height: 180px;
+        width: 150px;
+        height: 150px;
       }
+
       .carousel-track {
-        animation-duration: 5s; /* 2x faster on mobile */
+        animation-duration: 5s;
       }
     }
 
-    /* Form style */
     form {
       max-width: 600px;
-      margin: 30px auto;
-      background-color: rgba(255, 255, 255, 0.95);
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
       padding: 20px;
       border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      z-index: 2;
       position: relative;
-      z-index: 1;
     }
 
     label {
       font-weight: bold;
-      text-align: right;
+      display: block;
+      margin-bottom: 5px;
     }
 
     input, select {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
       width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
     }
 
     button {
       background-color: purple;
       color: white;
+      border: none;
       padding: 12px;
       font-size: 18px;
-      border: none;
       border-radius: 5px;
       cursor: pointer;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="الشعار" class="logo" />
+    <img src="logo.png" class="logo" alt="الشعار">
     <div class="title">تسجيل</div>
   </header>
 
-  <img src="logo.png" alt="شعار الخلفية" class="main-logo" />
+  <img src="logo.png" class="main-logo" alt="خلفية الشعار" />
 
-  <!-- Infinite Loop Carousel -->
   <div class="carousel-container">
     <div class="carousel-track">
-      <!-- Images duplicated to form a perfect loop -->
-      <img src="pic1.jpg" alt="1">
-      <img src="pic2.jpg" alt="2">
-      <img src="pic3.jpg" alt="3">
-      <img src="pic4.jpg" alt="4">
-      <img src="pic5.jpg" alt="5">
-      <img src="pic1.jpg" alt="1 duplicate">
-      <img src="pic2.jpg" alt="2 duplicate">
-      <img src="pic3.jpg" alt="3 duplicate">
-      <img src="pic4.jpg" alt="4 duplicate">
-      <img src="pic5.jpg" alt="5 duplicate">
+      <img src="pic1.jpg" alt="1" />
+      <img src="pic2.jpg" alt="2" />
+      <img src="pic3.jpg" alt="3" />
+      <img src="pic4.jpg" alt="4" />
+      <img src="pic5.jpg" alt="5" />
+      <!-- Duplicated for loop effect -->
+      <img src="pic1.jpg" alt="1" />
+      <img src="pic2.jpg" alt="2" />
+      <img src="pic3.jpg" alt="3" />
+      <img src="pic4.jpg" alt="4" />
+      <img src="pic5.jpg" alt="5" />
     </div>
   </div>
 
-  <!-- Form -->
   <form action="https://formspree.io/f/your-form-id" method="POST">
-    <label>الاسم:
-      <input type="text" name="first_name" required>
-    </label>
+    <label>الاسم:</label>
+    <input type="text" name="first_name" required>
 
-    <label>اللقب:
-      <input type="text" name="last_name" required>
-    </label>
+    <label>اللقب:</label>
+    <input type="text" name="last_name" required>
 
-    <label>رقم الهاتف:
-      <input type="tel" name="phone" required>
-    </label>
+    <label>رقم الهاتف:</label>
+    <input type="tel" name="phone" required>
 
-    <label>الولاية:
-      <select name="wilaya" required>
-        <option value="">اختر الولاية</option>
-        <option>الجزائر</option>
-        <option>أدرار</option>
-        <option>الشلف</option>
-        <!-- أضف باقي الولايات حسب الحاجة -->
-      </select>
-    </label>
+    <label>الولاية:</label>
+    <select name="wilaya" required>
+      <option value="">اختر الولاية</option>
+      <option>الجزائر</option>
+      <option>أدرار</option>
+      <option>الشلف</option>
+      <option>الأغواط</option>
+      <option>أم البواقي</option>
+      <option>باتنة</option>
+      <option>بجاية</option>
+      <!-- أكمل باقي الولايات حسب الحاجة -->
+    </select>
 
-    <label>عدد الأشخاص:
-      <input type="number" name="number_of_people" required>
-    </label>
+    <label>عدد الأشخاص:</label>
+    <input type="number" name="number_of_people" required>
 
     <button type="submit">أرسل</button>
   </form>
