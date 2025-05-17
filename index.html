@@ -42,15 +42,15 @@
     }
 
     .carousel-container {
-      overflow-x: auto;
       display: flex;
-      justify-content: center;
+      overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
+      padding: 20px;
       gap: 20px;
-      padding: 20px 0;
       scroll-behavior: smooth;
       cursor: grab;
+      direction: ltr; /* needed to make images go right to left while still in RTL page */
     }
 
     .carousel-container::-webkit-scrollbar {
@@ -58,14 +58,14 @@
     }
 
     .carousel-container img {
+      flex: 0 0 auto;
       width: 80%;
       max-width: 300px;
       height: 200px;
       object-fit: cover;
       scroll-snap-align: center;
       border-radius: 10px;
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
+      transition: transform 0.2s;
     }
 
     .carousel-container img:active {
@@ -126,8 +126,8 @@
 
   <img src="logo.png" class="main-logo" alt="شعار باهت في الخلفية" />
 
-  <!-- Carousel with swipe/drag -->
-  <div class="carousel-container" dir="ltr">
+  <!-- Manual swipe carousel -->
+  <div class="carousel-container">
     <img src="pic1.jpg" alt="1" />
     <img src="pic2.jpg" alt="2" />
     <img src="pic3.jpg" alt="3" />
