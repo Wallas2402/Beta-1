@@ -49,6 +49,8 @@
       -webkit-overflow-scrolling: touch;
       gap: 20px;
       padding: 20px 0;
+      scroll-behavior: smooth;
+      cursor: grab;
     }
 
     .carousel-container::-webkit-scrollbar {
@@ -63,6 +65,12 @@
       scroll-snap-align: center;
       border-radius: 10px;
       flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-container img:active {
+      transform: scale(1.05);
+      cursor: grabbing;
     }
 
     @media (max-width: 768px) {
@@ -118,8 +126,8 @@
 
   <img src="logo.png" class="main-logo" alt="شعار باهت في الخلفية" />
 
-  <!-- Manual scroll carousel -->
-  <div class="carousel-container">
+  <!-- Carousel with swipe/drag -->
+  <div class="carousel-container" dir="ltr">
     <img src="pic1.jpg" alt="1" />
     <img src="pic2.jpg" alt="2" />
     <img src="pic3.jpg" alt="3" />
