@@ -51,7 +51,6 @@
 
     .carousel-track {
       display: flex;
-      gap: 0;
       width: max-content;
       animation: scroll 10s linear infinite;
     }
@@ -75,13 +74,11 @@
         width: 160px;
         height: 120px;
       }
-
       .logo {
         height: 90px;
       }
-
       .carousel-track {
-        animation: scroll 5s linear infinite; /* vitesse doublée pour mobile */
+        animation: scroll 5s linear infinite;
       }
     }
 
@@ -152,7 +149,7 @@
 
   <img src="logo.png" alt="شعار الخلفية" class="main-logo" />
 
-  <!-- Carousel -->
+  <!-- Carousel infini -->
   <div class="carousel-wrapper">
     <div class="carousel-track" id="carousel-track">
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
@@ -160,7 +157,7 @@
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
       <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
       <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
-      <!-- Clones pour défilement circulaire sans espace -->
+      <!-- Doublage pour effet infini sans espace -->
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
       <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
@@ -169,7 +166,7 @@
     </div>
   </div>
 
-  <!-- Lightbox -->
+  <!-- Zoom Image -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <img src="" alt="zoom" id="lightbox-img">
   </div>
@@ -195,7 +192,7 @@
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <!-- compléter les autres wilayas -->
+        <!-- compléter les autres 58 wilayas ici -->
       </select>
     </label>
 
