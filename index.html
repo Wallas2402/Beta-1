@@ -51,22 +51,23 @@
 
     .carousel-track {
       display: flex;
-      gap: 10px;
+      gap: 0;
+      width: max-content;
       animation: scroll 10s linear infinite;
     }
 
     .carousel-track img {
       width: 220px;
       height: 160px;
-      border-radius: 10px;
       object-fit: cover;
-      cursor: pointer;
       flex-shrink: 0;
+      border-radius: 10px;
+      cursor: pointer;
     }
 
     @keyframes scroll {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-110%); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 768px) {
@@ -77,6 +78,10 @@
 
       .logo {
         height: 90px;
+      }
+
+      .carousel-track {
+        animation: scroll 5s linear infinite; /* vitesse doublée pour mobile */
       }
     }
 
@@ -147,7 +152,7 @@
 
   <img src="logo.png" alt="شعار الخلفية" class="main-logo" />
 
-  <!-- Défilement infini -->
+  <!-- Carousel -->
   <div class="carousel-wrapper">
     <div class="carousel-track" id="carousel-track">
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
@@ -155,7 +160,7 @@
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
       <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
       <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
-      <!-- clones pour boucle infinie -->
+      <!-- Clones pour défilement circulaire sans espace -->
       <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
       <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
       <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
@@ -190,16 +195,12 @@
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <!-- ajouter les autres wilayas ici -->
+        <!-- compléter les autres wilayas -->
       </select>
     </label>
 
     <label>عدد الأشخاص:
       <input type="number" name="total_people" required>
-    </label>
-
-    <label>عدد الأشخاص المرافقين:
-      <input type="number" name="accompanying_people" required>
     </label>
 
     <button type="submit">أرسل الطلب</button>
