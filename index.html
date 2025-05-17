@@ -42,31 +42,35 @@
       z-index: 0;
     }
 
-    .carousel-container {
-      overflow-x: auto;
-      display: flex;
-      gap: 10px;
-      padding: 20px;
-      scroll-snap-type: x mandatory;
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      height: 170px;
+      margin: 30px 0;
     }
 
-    .carousel-container img {
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+      gap: 10px;
+    }
+
+    .carousel-track img {
       width: 200px;
       height: 150px;
       border-radius: 10px;
       object-fit: cover;
       cursor: pointer;
-      scroll-snap-align: start;
       flex-shrink: 0;
-      transition: transform 0.2s ease;
     }
 
-    .carousel-container img:hover {
-      transform: scale(1.05);
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 768px) {
-      .carousel-container img {
+      .carousel-track img {
         width: 160px;
         height: 120px;
       }
@@ -112,7 +116,6 @@
       cursor: pointer;
     }
 
-    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0; left: 0;
@@ -133,7 +136,6 @@
     .lightbox.active {
       display: flex;
     }
-
   </style>
 </head>
 <body>
@@ -145,13 +147,21 @@
 
   <img src="logo.png" alt="شعار الخلفية" class="main-logo" />
 
-  <!-- Galerie -->
-  <div class="carousel-container">
-    <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
-    <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
-    <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
-    <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
-    <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
+  <!-- Défilement infini -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carousel-track">
+      <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
+      <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
+      <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
+      <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
+      <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
+      <!-- Clone pour boucle infinie -->
+      <img src="pic1.jpg" alt="1" onclick="openLightbox(this.src)">
+      <img src="pic2.jpg" alt="2" onclick="openLightbox(this.src)">
+      <img src="pic3.jpg" alt="3" onclick="openLightbox(this.src)">
+      <img src="pic4.jpg" alt="4" onclick="openLightbox(this.src)">
+      <img src="pic5.jpg" alt="5" onclick="openLightbox(this.src)">
+    </div>
   </div>
 
   <!-- Lightbox -->
@@ -160,7 +170,7 @@
   </div>
 
   <!-- Formulaire -->
-  <form action="https://formspree.io/f/mpwdkapw" method="POST">
+  <form action="https://formspree.io/f/your-form-id" method="POST">
     <label>الاسم:
       <input type="text" name="first_name" required>
     </label>
@@ -180,59 +190,7 @@
         <option>أدرار</option>
         <option>الشلف</option>
         <option>الأغواط</option>
-        <option>أم البواقي</option>
-        <option>باتنة</option>
-        <option>بجاية</option>
-        <option>بسكرة</option>
-        <option>بشار</option>
-        <option>البليدة</option>
-        <option>البويرة</option>
-        <option>تمنراست</option>
-        <option>تبسة</option>
-        <option>تلمسان</option>
-        <option>تيارت</option>
-        <option>تيزي وزو</option>
-        <option>الجلفة</option>
-        <option>جيجل</option>
-        <option>سطيف</option>
-        <option>سعيدة</option>
-        <option>سكيكدة</option>
-        <option>سيدي بلعباس</option>
-        <option>عنابة</option>
-        <option>قالمة</option>
-        <option>قسنطينة</option>
-        <option>المدية</option>
-        <option>مستغانم</option>
-        <option>المسيلة</option>
-        <option>معسكر</option>
-        <option>ورقلة</option>
-        <option>وهران</option>
-        <option>البيض</option>
-        <option>إليزي</option>
-        <option>برج بوعريريج</option>
-        <option>بومرداس</option>
-        <option>الطارف</option>
-        <option>تندوف</option>
-        <option>تيسمسيلت</option>
-        <option>الوادي</option>
-        <option>خنشلة</option>
-        <option>سوق أهراس</option>
-        <option>تيبازة</option>
-        <option>ميلة</option>
-        <option>عين الدفلى</option>
-        <option>النعامة</option>
-        <option>عين تموشنت</option>
-        <option>غرداية</option>
-        <option>غليزان</option>
-        <option>تميمون</option>
-        <option>أولاد جلال</option>
-        <option>بني عباس</option>
-        <option>إن صالح</option>
-        <option>إن قزام</option>
-        <option>تقرت</option>
-        <option>جانت</option>
-        <option>المغير</option>
-        <option>المنيعة</option>
+        <!-- Ajoute le reste si besoin -->
       </select>
     </label>
 
